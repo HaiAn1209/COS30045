@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>TV Energy Consumption – Data Story</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+
+<body>
+  <div class="slide-container">
+
+    <!-- SLIDE 0: INTRO -->
+    <section class="slide active">
+      <h1>TV Energy Consumption in Australia</h1>
+      <p class="subtitle">
+        A data story about how screen technology and size affect electricity use
+      </p>
+
+      <p>
+        Televisions are one of the most common electrical appliances in Australian households.
+        With rising electricity prices, understanding how different TVs consume energy can help
+        consumers make more informed purchasing decisions.
+      </p>
+
+      <p class="hint">
+        Use the right side of the screen (or → key) to move forward. Use the left side (or ← key) to go back.
+      </p>
+    </section>
+
+    <!-- SLIDE 1 -->
+    <section class="slide">
+      <h2>What TV screen technologies are most common?</h2>
+      <p>
+        Understanding which screen technologies are most common provides context for the rest of the story.
+      </p>
+
+      <img src="images/chart-tech-frequency.png" alt="Bar chart showing frequency of TV screen technologies" />
+
+      <p class="insight">
+        LED-based televisions dominate the Australian market, while OLED models are less common.
+      </p>
+    </section>
+
+    <!-- SLIDE 2 -->
+    <section class="slide">
+      <h2>Does screen size affect power consumption?</h2>
+      <p>
+        Screen size is a key factor when purchasing a TV. Larger screens may consume more electricity.
+      </p>
+
+      <img src="images/chart-size-vs-power.png" alt="Scatter plot showing relationship between screen size and power consumption" />
+
+      <p class="insight">
+        Larger TVs generally consume more power, although efficiency varies between models.
+      </p>
+    </section>
+
+    <!-- SLIDE 3 -->
+    <section class="slide">
+      <h2>Which screen technology is the most energy efficient?</h2>
+      <p>
+        Comparing average power consumption across screen technologies helps identify more energy-efficient options.
+      </p>
+
+      <img src="images/chart-avg-power-tech.png" alt="Bar chart showing average power consumption by screen technology" />
+
+      <p class="insight">
+        On average, newer screen technologies tend to consume less power.
+      </p>
+    </section>
+
+    <!-- SLIDE 4 -->
+    <section class="slide">
+      <h2>Conclusion</h2>
+      <p>
+        Both screen size and screen technology influence TV energy consumption.
+        Consumers should consider long-term electricity costs, not just price and size.
+      </p>
+
+      <p class="hint">
+        End of story. Use the left side (or ← key) to review previous slides.
+      </p>
+    </section>
+
+  </div>
+
+  <!-- Invisible navigation zones -->
+  <div class="nav-zone nav-left" id="prevZone" aria-label="Previous slide" title="Previous (←)">
+    <span class="nav-hint">←</span>
+  </div>
+
+  <div class="nav-zone nav-right" id="nextZone" aria-label="Next slide" title="Next (→)">
+    <span class="nav-hint">→</span>
+  </div>
+
+  <!-- Progress dots -->
+  <div class="progress-dots" id="progressDots"></div>
+
+  <script src="js/app.js"></script>
+</body>
+</html>

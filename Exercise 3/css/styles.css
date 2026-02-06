@@ -1,0 +1,153 @@
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial;
+  background: #0b0d10;
+  color: #f4f4f5;
+}
+
+.slide-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 48px 24px;
+  min-height: 80vh;
+}
+
+.slide {
+  display: none;
+}
+
+.slide.active {
+  display: block;
+}
+
+h1, h2 {
+  margin: 0 0 12px;
+}
+
+.subtitle {
+  color: #9ca3af;
+  margin: 0 0 24px;
+}
+
+p {
+  margin: 0 0 14px;
+  line-height: 1.6;
+}
+
+img {
+  width: 100%;
+  max-width: 800px;
+  margin: 24px auto;
+  display: block;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.15);
+}
+
+.insight {
+  font-style: italic;
+  color: #d1d5db;
+}
+
+.hint {
+  color: rgba(244,244,245,0.65);
+  font-size: 0.95rem;
+}
+
+/* ===== Invisible navigation zones ===== */
+
+.nav-zone {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  width: 30%;
+  z-index: 10;
+  cursor: pointer;
+  display: flex;              /* JS may set to none/flex */
+  align-items: center;
+  justify-content: center;
+  pointer-events: auto;
+}
+
+/* Left zone */
+.nav-left {
+  left: 0;
+}
+
+/* Right zone */
+.nav-right {
+  right: 0;
+}
+
+/* Hover effect layer */
+.nav-zone::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+
+.nav-left::before {
+  background: linear-gradient(
+    to right,
+    rgba(255,255,255,0.08),
+    transparent
+  );
+}
+
+.nav-right::before {
+  background: linear-gradient(
+    to left,
+    rgba(255,255,255,0.08),
+    transparent
+  );
+}
+
+.nav-zone:hover::before {
+  opacity: 1;
+}
+
+/* Arrow hint */
+.nav-hint {
+  font-size: 48px;
+  color: rgba(255,255,255,0.35);
+  opacity: 0;
+  transition: opacity 0.25s ease;
+  user-select: none;
+  position: relative; /* above gradient */
+  z-index: 1;
+}
+
+.nav-zone:hover .nav-hint {
+  opacity: 1;
+}
+
+/* ===== Progress dots ===== */
+
+.progress-dots {
+  position: fixed;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+  z-index: 20;
+}
+
+.progress-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.35);
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.progress-dot.active {
+  background: rgba(255, 255, 255, 0.85);
+  transform: scale(1.25);
+}
+
+.progress-dot:hover {
+  background: rgba(255, 255, 255, 0.7);
+}

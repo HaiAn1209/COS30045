@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Exercise 4.1 SVG House</title>
+
+<style>
+
+body{
+font-family: Arial;
+text-align:center;
+}
+
+svg{
+border:1px solid black;
+background:skyblue;
+}
+
+/* window style */
+.window rect{
+fill:lightblue;
+stroke:black;
+stroke-width:2;
+}
+
+.window line{
+stroke:black;
+stroke-width:2;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<h2>Exercise 4.1 SVG House</h2>
+
+<svg width="800" height="500">
+
+<!-- grass -->
+<rect x="0" y="350" width="800" height="150" fill="green"/>
+
+<!-- sun -->
+<circle cx="700" cy="80" r="40" fill="yellow"/>
+
+<!-- tree -->
+<rect x="120" y="260" width="50" height="90" fill="sienna"/>
+<ellipse cx="130" cy="240" rx="50" ry="35" fill="darkgreen"/>
+<ellipse cx="160" cy="240" rx="50" ry="35" fill="darkgreen"/>
+<ellipse cx="145" cy="210" rx="40" ry="35" fill="darkgreen"/>
+
+
+<!-- chimney -->
+<rect x="455" y="170" width="30" height="70" fill="darkred"/>
+
+<!-- chimney top -->
+<rect x="450" y="160" width="40" height="10" fill="white"/>
+
+<!-- path -->
+<path
+d="M400 360
+C380 420, 430 440, 400 510"
+stroke="gold"
+stroke-width="35"
+fill="none"
+/>
+
+<!-- house body -->
+<rect x="300" y="220" width="200" height="150" fill="brown"/>
+
+
+<!-- roof -->
+<polygon points="300,220 400,140 500,220" fill="orange"/>
+
+
+<!-- door -->
+<rect x="380" y="290" width="35" height="80" fill="saddlebrown"/>
+
+<!-- door knob -->
+<circle cx="410" cy="330" r="4" fill="black"/>
+
+
+<!-- windows group -->
+<g class="window">
+
+<!-- left window -->
+<rect x="325" y="250" width="40" height="40"/>
+
+<!-- window divider -->
+<line x1="345" y1="250" x2="345" y2="290"/>
+<line x1="325" y1="270" x2="365" y2="270"/>
+
+
+<!-- right window -->
+<rect x="435" y="250" width="40" height="40"/>
+
+<!-- window divider -->
+<line x1="455" y1="250" x2="455" y2="290"/>
+<line x1="435" y1="270" x2="475" y2="270"/>
+
+</g>
+
+
+<!-- title -->
+<text x="330" y="120" font-size="22" fill="black">
+My SVG House
+</text>
+
+</svg>
+
+</body>
+</html>

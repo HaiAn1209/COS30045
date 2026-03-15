@@ -70,8 +70,21 @@ main p {
     color: white;
 }
 
+.chart-divider {
+    border: none;
+    height: 2px;
+    background: #d7cfc2;
+    margin: 60px auto;
+    width: 100%;
+}
+
+.body {
+    margin-top: 30px;
+}
+
 footer {
-    padding: 20px 40px;
+    padding: 5px;
     text-align: center;
-    color: #5a3e2b;
+    background-color: #5a3e2b;
+    color: white;
 }

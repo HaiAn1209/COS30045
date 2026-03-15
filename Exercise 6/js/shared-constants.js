@@ -10,7 +10,7 @@ const bodyBackgroundColor = "#f4efe6";
 const barColor = "#6c6f70";
 const barStrokeColor = bodyBackgroundColor;
 
-// Scales
+// Histogram scales
 const xScale = d3.scaleLinear().range([0, innerWidth]);
 const yScale = d3.scaleLinear().range([innerHeight, 0]);
 
@@ -27,6 +27,7 @@ const filters_screen = [
     { id: "OLED", label: "OLED", isActive: false }
 ];
 
+// Screen size filters
 const filters_size = [
     { id: "all", label: "All Sizes", isActive: true },
     { id: 24, label: '24"', isActive: false },
@@ -35,3 +36,23 @@ const filters_size = [
     { id: 65, label: '65"', isActive: false },
     { id: 98, label: '98"', isActive: false }
 ];
+
+/* =========================
+   Scatterplot constants
+========================= */
+
+// separate inner chart for scatterplot
+let innerChartS;
+
+// separate scales for scatterplot
+const xScaleS = d3.scaleLinear().range([0, innerWidth]);
+const yScaleS = d3.scaleLinear().range([innerHeight, 0]);
+
+// tooltip size
+const tooltipWidth = 90;
+const tooltipHeight = 34;
+
+// colour scale for screen technology
+const colorScale = d3.scaleOrdinal()
+    .domain(["LED", "LCD", "OLED"])
+    .range(["#d76f1a", "#5f8fc2", "#8a4fb3"]);

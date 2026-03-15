@@ -46,12 +46,10 @@ const updateHistogram = (originalData) => {
 
     let updatedData = originalData;
 
-    // apply screen filter
     if (activeScreen !== "all") {
         updatedData = updatedData.filter(d => d.screenTech === activeScreen);
     }
 
-    // apply size filter
     if (activeSize !== "all") {
         updatedData = updatedData.filter(d => d.screenSize === activeSize);
     }
@@ -89,4 +87,55 @@ const updateHistogram = (originalData) => {
         .transition()
         .duration(600)
         .call(d3.axisLeft(yScale));
+};
+
+/* =========================
+   Tooltip functions
+========================= */
+
+const createTooltip = () => {
+    const tooltip = innerChartS.append("g")
+        .attr("class", "tooltip")
+        .style("opacity", 0);
+
+    tooltip.append("rect")
+        .attr("width", tooltipWidth)
+        .attr("height", tooltipHeight)
+        .attr("rx", 6)
+        .attr("ry", 6)
+        .attr("fill", barColor)
+        .attr("opacity", 0.9);
+
+    tooltip.append("text")
+        .attr("class", "tooltip-text")
+        .attr("x", tooltipWidth / 2)
+        .attr("y", tooltipHeight / 2 + 5)
+        .attr("text-anchor", "middle")
+        .attr("fill", "white")
+        .attr("font-size", "12px");
+};
+
+const handleMouseEvents = () => {
+    d3.select(".inner-chart-scatter")
+        .selectAll("circle")
+        .on("mouseenter", function (e, d) {
+            const cx = +this.getAttribute("cx");
+            const cy = +this.getAttribute("cy");
+
+            d3.select(".tooltip-text")
+                .text(`${d.screenSize}"`);
+
+            d3.select(".tooltip")
+                .attr("transform", `translate(${cx + 10}, ${cy - 40})`)
+                .transition()
+                .duration(150)
+                .style("opacity", 1);
+        })
+        .on("mouseleave", function () {
+            d3.select(".tooltip")
+                .transition()
+                .duration(150)
+                .style("opacity", 0)
+                .attr("transform", "translate(-100,-100)");
+        });
 };
